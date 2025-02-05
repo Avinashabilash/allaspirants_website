@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirant Arts & Sports Club</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            width: 150px; /* Set appropriate width for the logo */
+            height: 150; /* Maintain aspect ratio */
+            margin-right: 15px; /* Add space between logo and text */
+            object-fit: cover; /* Ensures the logo fits well inside the circle */
+            border-radius: 50%; /* Makes the logo circular */
+        }
+         /* Header styling */
+    header {
+        display: flex;
+        justify-content: center; /* Centers the content in the header */
+        align-items: center; /* Vertically centers the content */
+        background-color: #003366; /* Dark background */
+        padding: 1rem 0; /* Top and bottom padding */
+    }
+
+    /* Aligning the logo and text horizontally */
+    header .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Logo text */
+    header h1 {
+        margin-left: 15px; /* Space between the logo and the text */
+        font-size: 2.5rem; /* Adjust size as needed */
+        color: white; /* White text for contrast */
+    }
+
+    
+        .navbar {
+            padding: 1rem;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Align navbar items to the right */
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            animation: slide 15s infinite linear;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .uniform-info {
+            margin-top: 20px;
+            text-align: center; /* Center-align the content inside the section */
+        }
+        
+        .uniform-images-wrapper {
+            display: flex; /* Display images in a row */
+            justify-content: center; /* Center the images horizontally */
+            gap: 20px; /* Adds space between the images */
+            align-items: center; /* Ensures images are aligned vertically */
+            flex-direction: column; /* Stack the images and title vertically */
+        }
+        
+        .uniform-images-wrapper h3 {
+            margin-bottom: 15px; /* Adds space between the title and images */
+            font-size: 24px; /* Set the font size of the title */
+        }
+        
+        .uniform-images img {
+            width: 400px; /* Ensures both images have the same width */
+            height: auto; /* Maintains aspect ratio */
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        /* Event Item styling */
+.event-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative; /* To position the logo inside */
+}
+
+.event-item:hover {
+    transform: scale(1.05);
+}
+
+/* Logo inside the event-item box */
+.event-item .event-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px; /* Adjust logo size */
+    height: 50px;
+    border-radius: 50%; /* Round logo */
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.event-item .event-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure logo fits within the circle */
+}
+
+/* Sticker image within the event item */
+.event-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Footer styling */
+footer {
+    background: black;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Navbar link styling */
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ff9800;
+}
+        
+        .event-sticker {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .sticker-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card {
+            border-radius: 15px; /* Rounded corners */
+            position: relative;
+            background-color: #f8f8fa; /* Light background for better visibility */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect around the box */
+            transition: transform 0.3s ease; /* Smooth transition for hover effect */
+        }
+        
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+        
+        .event-sticker {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            border-radius: 50%;
+            background-color:black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .sticker-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow */
+            border-radius: 50%; /* Ensure the shadow follows the circular shape */
+        }
+        
+        .card-body {
+            padding: 20px;
+            margin-top: 70px; /* Adjust spacing to prevent overlap with sticker */
+        }
+        
+        .card-body h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #000; /* Black text */
+            text-transform: capitalize;
+            margin: 0;
+        }
+        
+        /* Remove the underlining and change text color on hover for the sports links */
+        .card-body h3:hover {
+            color: #000; /* Ensure text stays black */
+            text-decoration: none; /* Remove underline on hover */
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000; /* Black color for the section title */
+            margin-bottom: 30px;
+        }
+        
+        
+        
+    </style>
+<head>
+<body>
+
+<header class="bg-dark text-white py-4">
+    <div class="container d-flex align-items-center justifycontent-center">
+        <!-- Logo on the left side -->
+        <img src="co.jpg" alt="Logo" class="navbar-brand">
+        <h1 class="ml-3">Aspirant Arts & Sports Club</h1>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Aspirant Club</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#sports">Sports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Video.html">Videos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact-us">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Image Slider -->
+<div class="slider-wrapper">
+    <div class="slider">
+        <img src="img-9.jpg" alt="img-9">
+        <img src="img-20.jpg" alt="img-20">
+        <img src="img-17.jpg" alt="img-17">
+        <img src="img-10.jpg" alt="img-10">
+        <img src="g-9.jpg" alt="g-9">
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div class="container my-5" id="about-us" >
+    <section class="about-us">
+        <h2 class="display-4">About Us</h2>
+        <p>Welcome to Aspirant Arts and Sports Club
+            At Aspirant Arts and Sports Club, where passion meets performance, we take immense pride in offering a diverse range of sports and activities designed for athletes of all levels. From the thrill of football, cricket, and basketball to the grace of skating, swimming, and badminton, we provide world-class facilities that nurture individual talents and build teamwork. Whether it's honing precision in archery, pushing limits in marathon training, or mastering strategies in chess, we inspire excellence, encourage healthy competition, and foster a vibrant community.
+        </p>
+        <p>Beyond sports, we prioritize holistic development with expert-led workshops and mental conditioning sessions to refine techniques and improve overall performance. Our dedicated dance halls also provide a creative outlet for fitness through movement.</p>
+        
+        <!-- New Section: Uniform Info -->
+        <div class="uniform-info">
+            <p>
+                We provide high-quality T-shirts and shorts for students to wear during various activities, designed to ensure both comfort and durability. Each team is represented by a distinct color, creating a strong sense of identity and unity. The red team symbolizes passion and energy, while the yellow team represents positivity and enthusiasm. The green team signifies growth and harmony, and the blue team reflects trust and determination. These team colors not only highlight the unique spirit of each house but also foster camaraderie and pride among the students. By wearing their team colors, students are encouraged to collaborate, compete, and showcase their talents in an environment that promotes teamwork and excellence.
+            </p>
+            <div class="uniform-images">
+                <h3>Garment Images</h3>
+                <img src="img-6.jpg" alt="T-shirt and Shorts - Image 6" class="img-fluid">
+                <img src="img-22.png"s alt="T-shirt and Shorts - Image 16" class="img-fluid">
+            </div>
+        </div>
+        
+        <p>As  Aspirant Arts and Sports Club, I am deeply committed to creating an environment where every member feels empowered to grow, excel, and achieve their goals. This academy stands as a testament to our mission of inspiring greatness, fostering camaraderie, and helping individuals realize their full potential. Whether you're here to compete, learn, or simply enjoy, we have something extraordinary waiting for you.</p>
+    </section>
+</div>
+ <!--sport & event -->
+<<div class="container my-5" id="Sports">
+    <h2 class="display-4">Sports</h2>
+    <div class="row">
+        <!-- Football -->
+        <div class="col-md-4 mb-4">
+        <div class="event-item card">
+            <div class="event-logo">
+                <img src="football-logo.jpg" alt="Football Logo">
+            </div>
+            <div class="event-sticker">
+                <img src="si-1.jpg" alt="Football Sticker" class="sticker-img">
+            </div>
+            <div class="card-body text-center">
+                <h3>Football</h3>
+            </div>
+        </div>
+    </div>
+        <!-- Cricket -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-2.jpg" alt="Cricket" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Cricket</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Basketball -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-3.jpg" alt="Basketball" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Basketball</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Badminton -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-5.jpg" alt="Badminton Sticker" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Badminton</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Hockey -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-4.jpg" alt="Hockey" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Hockey</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Boxing -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-6.jpg" alt="Boxing" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Boxing</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Skating -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-7.jpg" alt="Skating" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Skating</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Swimming -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-8.jpg" alt="Swimming" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Swimming</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Volleyball -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-14.jpg" alt="Volleyball" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Volleyball</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Chess -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-9.jpg" alt="Chess" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Chess</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Table Tennis -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-10.jpg" alt="Table Tennis" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Table Tennis</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Archery -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-13.png" alt="Archery" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Archery</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Marathon -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-11.jpg" alt="Marathon" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Marathon</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Mixed Martial Arts -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                    <img src="si-12.jpg" alt="Mixed Martial Arts" class="sticker-img">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Mixed Martial Arts</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Arts Section -->
+<div class="container my-5" id="Arts">
+    <h2 class="display-4">Arts</h2>
+    <div class="row">
+        <!-- Dance -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class = "event-sticker">
+                <img src="si-15.png" class="sticker-img" alt="Dance">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Dance</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Drawing -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class = "event-sticker">
+                <img src="si-16.jpg" class="sticker-img" alt="Drawing">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Drawing</h3>
+                </div>
+            </div>
+        </div>
+         <!-- Music -->
+         <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                <img src="si-17.png" class="sticker-img" alt="Music">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Music</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Yoga -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                <img src="si-18.jpg" class="sticker-img" alt="Yoga">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Yoga</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Fashion Designing -->
+        <div class="col-md-4 mb-4">
+            <div class="event-item card">
+                <div class="event-sticker">
+                <img src="si-19.png" class="sticker-img" alt="Fashion Designing">
+                </div>
+                <div class="card-body text-center">
+                    <h3>Fashion Designing</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<<!-- Gallery Section -->
+<div class="container my-5" id="gallery">
+    <section class="section">
+        <h2 class="display-4">Gallery</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="g-9.jpg" class="img-fluid rounded shadow-sm" alt="g-9" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src= "img-1.jpg" class="img-fluid rounded shadow-sm" alt="img-1" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-2.jpg" class="img-fluid rounded shadow-sm" alt="img-2" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img-3.jpg" class="img-fluid rounded shadow-sm" alt="img-3" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-4.jpg" class="img-fluid rounded shadow-sm" alt="img-4" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-5.jpg" class="img-fluid rounded shadow-sm" alt="img-5" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img-6.jpg" class="img-fluid rounded shadow-sm" alt="img-6" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-7.jpg" class="img-fluid rounded shadow-sm" alt="img-7" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-8.jpg" class="img-fluid rounded shadow-sm" alt="img-8" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img-9.jpg" class="img-fluid rounded shadow-sm" alt="img-9" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-10.jpg" class="img-fluid rounded shadow-sm" alt="img-10" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-11.jpg" class="img-fluid rounded shadow-sm" alt="img-11" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img-12.jpg" class="img-fluid rounded shadow-sm" alt="img-12" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-14.jpg" class="img-fluid rounded shadow-sm" alt="img-14" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-15.jpg" class="img-fluid rounded shadow-sm" alt="img-15" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img-16.jpg" class="img-fluid rounded shadow-sm" alt="img-16" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-17.jpg" class="img-fluid rounded shadow-sm" alt="img-17" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-18.jpg" class="img-fluid rounded shadow-sm" alt="img-18" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img-19.jpg" class="img-fluid rounded shadow-sm" alt="img-19" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-20.jpg" class="img-fluid rounded shadow-sm" alt="img-20" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img-21.jpg" class="img-fluid rounded shadow-sm" alt="img-21" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="mg-13.jpg" class="img-fluid rounded shadow-sm" alt="mg-13" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- Contact Us Section -->
+<div class="container my-5" id="contact-us">
+    <section class="contact-us">
+        <h2 class="display-4">Contact Us</h2>
+        <p>Address: 90/2, Teachers Colony, Main Street, Ambattur, Chennai - 600 053</p>
+        <p>Email: <a href="mailto:allaspirants@gmail.com">allaspirants@gmail.com</a></p>
+        <p>Phone: +91-9344941236</p>
+
+        <!-- Embed Google Map -->
+        <div class="map-container my-4">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.8002931601472!2d80.14803837507884!3d13.111834387216588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA2JzQyLjYiTiA4MMKwMDknMDIuMiJF!5e0!3m2!1sen!2sin!4v1738753311881!5m2!1sen!2sin" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+</div>
+
+<footer class="bg-dark text-white py-4">
+    <p>&copy; 2025 Aspirant Arts & Sports Club. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
